@@ -1,0 +1,20 @@
+<div class="leaderboard-item">
+
+    <div class="wrapper" [class.isPlayer]="isPlayer">
+        <!-- [ngStyle]="{background:isPlayer? 'lightblue':'*',borderColor:isPlayer? '#72bcd4':'*'}" -->
+        <div class="medal" [ngStyle]="{display: rank<=3}" [class.one]="rank===1" [class.two]="rank===2" [class.three]="rank===3"> </div>
+        <div class="user-rank" >
+            <!-- [ngStyle]="{background:isPlayer? 'orange':'*'}" -->
+            <!--  rank===1? 'gold' : rank===2? 'silver' : rank===3? '#cd7f32' : -->
+            {{rank}}
+        </div>
+        <div class="user-name">
+            {{name}}
+        </div>
+        <div class="user-score">
+            <span class="trophies_img"></span>
+            {{score}}
+        </div>
+    </div>
+
+</div>

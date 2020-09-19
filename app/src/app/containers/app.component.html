@@ -1,0 +1,34 @@
+
+<!-- Output dans le app-nav pour styliser le .body background -->
+<!-- <app-header [user]="user$ |async" (logout)="onLogout()"></app-header> -->
+<!-- <app-nav *ngIf="(user$ | async)?.authenticated" [pseudo]="(user$ | async)?.displayName" [user]="user$ |async" (logout)="onLogout()"></app-nav> -->
+
+<div class="row justify-content-center" style="margin-right: 0; margin-left: 0;" >
+    <div id="layout" class="col-12 col-sm-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div [@step]="enteringGame" class="intro_container" *ngIf="enteringGame!==false">
+    <!-- <div class="text">
+        <div class="relative-container">
+            <div class="game-icon"></div>
+            <div class="text-header-img"></div>
+        </div>
+    </div> -->
+    <img class="text-img"
+     src="../../assets/intro-text.png">
+     <!-- <div></div> -->
+</div>
+
+<!-- <div [@step]="enteringGame" class="intro_container" *ngIf="enteringGame!==false">
+    <div class="game-icon"></div>
+    <div class="text">
+    </div>
+</div> -->
+<!-- <span class="title" >Save trees</span> 
+<span class="title2">(and pandas)</span> -->
+
+<!-- {{user$|async|json}} -->
+
+

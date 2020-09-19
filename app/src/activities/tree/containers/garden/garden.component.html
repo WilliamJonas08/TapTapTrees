@@ -1,0 +1,111 @@
+<header-bar *ngIf="!showModal"></header-bar>
+<h1 *ngIf="!showModal">Boutique</h1>
+
+<div class="garden-container" *ngIf="!showModal">
+  <div class="classics">
+    <h2>Classics</h2>
+    <p class="section-description">Réels investissements pour la planête</p>
+    <div class="shop-item" *ngFor="let shopItem of classicItems">
+      <div class="img" [id]="shopItem.itemName"></div>
+      <div class="text">
+        <h3>
+          {{ shopItem.displayName }}
+          ({{
+            (this.user$ | async).items[shopItem.itemName]
+              ? (this.user$ | async).items[shopItem.itemName][shopItem.itemName]
+              : 0
+          }})
+        </h3>
+        <p>{{ shopItem.description }}</p>
+        <button
+          (click)="buyItem(shopItem.itemName)"
+          [disabled]="(this.user$ | async).gold < shopItem.price"
+        >
+          Buy for {{ shopItem.price }}
+          <div class="gold-icon"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Boosters</h2>
+  <p class="section-description">
+    Gadgets pour améliorer ta performance de jeu
+  </p>
+  <div class="shop-item" *ngFor="let shopItem of boosterItems">
+    <div class="img" [id]="shopItem.itemName"></div>
+    <div class="text">
+      <h3>
+        {{ shopItem.displayName }}
+        ({{
+          (this.user$ | async).items[shopItem.itemName]
+            ? (this.user$ | async).items[shopItem.itemName][shopItem.itemName]
+            : 0
+        }})
+      </h3>
+      <p>{{ shopItem.description }}</p>
+      <button
+        (click)="buyItem(shopItem.itemName)"
+        [disabled]="(this.user$ | async).gold < shopItem.price"
+      >
+        Buy for {{ shopItem.price }}
+        <div class="gold-icon"></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- {{ (user$ | async).items | json }} -->
+</div>
+
+<h1 *ngIf="showModal">Publicité (test)</h1>
+<div class="publicity_modal" *ngIf="showModal">
+  <div class="text">
+    <!-- [ngStyle]="{display:showModal?'block':'none'}" -->
+    <p>- Aucune publicité disponible -</p>
+    <p>
+      Seriez vous prêt à regarder une courte publicité pour planter des arbres ?
+    </p>
+    <p>Répondez nous via l'option FEEDBACK dans l'onglet des options !</p>
+
+    <!-- <p style="margin-top: 1rem">Publicité test</p> -->
+  </div>
+
+  <!-- Module de parrainage iGraal Version COMPUTER -->
+  <!-- <div
+    style="width: 468px; height: 60px; overflow: hidden; margin: 0 auto"
+    id="ig-CrxEIZs8qgKEtRZt"
+  >
+    <noscript>
+      Vous devez activer javascript pour afficher ce contenu fourni par
+      <a href="//fr.igraal.com/">
+        iGraal : Cashback et Codes promo
+      </a></noscript
+    >
+  </div> -->
+  <!-- fin du module de parrainage iGraal-->
+
+  <!-- Module de parrainage iGraal Version PHONE-->
+  <div
+    style="width: 300px; height: 250px; overflow: hidden; margin: 0 auto"
+    id="ig-aEHNcBKj598wsUVN"
+  >
+    <noscript>
+      Vous devez activer javascript pour afficher ce contenu fourni par
+      <a href="//fr.igraal.com/">
+        iGraal : Cashback et Codes promo
+      </a></noscript
+    >
+  </div>
+  <!-- fin du module de parrainage iGraal-->
+
+  <div class="answer">
+    <button id="accept" (click)="modalAnswer('true')">J'ai compris</button>
+    <button id="accept" (click)="modalAnswer('true')">
+      Je n'ai pas compris
+    </button>
+  </div>
+
+  <!-- <button id="refuse">Refuse Dialog</button> -->
+</div>
+
+<nav-bar *ngIf="!showModal"></nav-bar>

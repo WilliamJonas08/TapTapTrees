@@ -1,0 +1,133 @@
+:host {
+  max-height: 100%;
+  overflow-y: auto;
+
+  .feedback-form {
+    // background: #fff;
+    // padding: 30px;
+    // padding-top: 15px;
+
+    height: 100%; //Phone
+
+    @media (min-width: 568px) {
+      //Computer
+      height: auto;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+    }
+
+    .text {
+      font-weight: 500;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      display: block; //sert uniquement a elargir la taille de l'input
+
+      input {
+        outline: 0;
+        font-size: 16px;
+        // color: #5777a8;
+        color: white;
+
+        padding: 10px 15px;
+        width: 100%; //  -webkit-fill-available;
+
+        background: lighten(#2f2f5d, 30%);
+        opacity: 0.9;
+        border: 2px solid #2f2f5d;
+        border-radius: 6px;
+
+        &::-webkit-input-placeholder {
+          color: white;
+          text-align: center;
+        }
+        // &[type="email"] {
+        //   border-radius: 3px 3px 0 0;
+        // }
+      }
+    }
+
+    &__action {
+      margin: 10px 0;
+
+      button {
+        cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        color: darken($color: lightblue, $amount: 40%);
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: lightblue;
+        border: 1px solid darken($color: lightblue, $amount: 15%);
+        border-radius: 8px;
+        box-shadow: 0 4px 0px darken($color: lightblue, $amount: 15%);
+        transition: all 0.2s ease-in-out;
+
+        display: flex;
+        justify-content: center;
+        outline: 0;
+
+        &:hover {
+          background: darken($color: lightblue, $amount: 15%);
+          border: 1px solid darken($color: lightblue, $amount: 30%);
+          box-shadow: 0 4px 0px darken($color: lightblue, $amount: 30%);
+          color: white;
+        }
+
+        // &:disabled {
+        //   // opacity: 0.4;
+        //   border: 1px solid #2f2f5d;
+        //   background: lighten(#2f2f5d, 10%);
+        //   box-shadow: 0 4px 0px darken($color: #2f2f5d, $amount: 15%);
+        //   color: white;
+        //   cursor: not-allowed;
+        // }        
+        &:disabled {
+          background: darken($color: red, $amount: 15%);
+          border: 1px solid darken($color: red, $amount: 30%);
+          box-shadow: 0 4px 0px darken($color: red, $amount: 30%);
+          color: white;
+        }
+
+        .disabled_img {
+          background: url(../../../../assets/forbidden.png);
+          background-position: center;
+          background-size: contain;
+          height: 20px;
+          width: 23px;
+          margin-right: 0.4em;
+        }
+      }
+    }
+
+    // .email {
+    //   button {
+    //     border: 1px solid darken(#c1cedb, 6%);
+    //     background: #c1cedb;
+    //     color: #fff;
+    //     padding: 8px;
+    //     font-size: 14px;
+    //     font-weight: 600;
+    //     &:hover {
+    //       background: darken(#c1cedb, 4%);
+    //       // border-color: darken(#c1cedb, 5%);
+    //     }
+    //   }
+    // }
+
+    .error {
+      color: white;
+      background: orangered;
+      border: 2px solid orangered;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 14px;
+      width: fit-content;
+      font-weight: bold;
+      margin: 10px auto;
+      opacity: 0.9;
+    }
+  }
+}

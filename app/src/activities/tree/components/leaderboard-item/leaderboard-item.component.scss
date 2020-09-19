@@ -1,0 +1,83 @@
+// :host{
+.leaderboard-item {
+  width: 100%;
+  margin-bottom: 2%;
+  // position: relative;
+
+  .wrapper {
+    position: relative;
+    width: 60%;
+    @media (max-width:567px) {
+      width: 80%;
+    }
+    // height: 3rem;
+    margin: auto;
+    // background: #6161af;
+    display: flex;
+    padding: 5px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+
+    // box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 3px solid lightblue;
+    
+    .medal {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 14%; //-webkit-fill-available;
+      &.one {
+        background: url(../../../../assets/gold.png) no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      &.two {
+        background: url(../../../../assets/silver.png) no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      &.three {
+        background: url(../../../../assets/bronze.png) no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    .user-rank {
+      flex: 0.5;
+    }
+
+    .user-name {
+      flex: 2;
+      border-right: 2px solid lightblue;
+      border-left: 2px solid lightblue;
+    }
+
+    .user-score {
+      flex: 1;
+      display: flex;
+    justify-content: center;
+      .trophies_img{
+        background: url(../../../../assets/tree-icon-1.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100%;
+        width: 20%;
+        margin-right: 0.4em;
+      }
+    }
+
+    &.isPlayer{
+      background:lightblue;
+      border-color: darken($color: lightblue, $amount: 25%) ;
+      .user-name{
+        border-right: 2px solid darken($color: lightblue, $amount: 25%);
+        border-left: 2px solid darken($color: lightblue, $amount: 25%);
+      }
+    }
+  }
+}
+// }

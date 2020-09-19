@@ -1,0 +1,296 @@
+.setup_container {
+  position: relative;
+  // background: #fff;
+
+  // background: url(../../../../assets/font-arbre.png) no-repeat;
+  // background-color: lightblue;
+  // background-position: center;
+  // background-size: contain;
+
+  // padding: 85px 30px 115px; //Pour mettre la navbar dans le padding
+  width: 100%;
+
+  height: 650px; //Computer
+  @media (max-width: 567px) {
+    height: 100%; //Phone
+  }
+
+  > div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .title {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    color: white;
+    padding: 18px;
+    justify-content: center;
+
+    background: url(../../../../assets/title.png) no-repeat;
+    background-color: #2f2f5d;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .play_button {
+    position: relative;
+    width: 100%;
+
+    height: 25%; //Définir la zone de click         //ZONECLICK
+    // line-height: 4.4; //Centrer verticalement "play"   //UNDEFINED
+
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 80px;
+    letter-spacing: 8px;
+
+    button {
+      // position: absolute;
+      // top: 70%;
+      // width: 100%;
+
+      margin: 2rem auto;
+      width: 80%;
+      height: 90%;
+
+      // padding: 10px;
+      // margin: 0 auto;
+
+      font-weight: bold;
+      color: darken($color: lightblue, $amount: 40%);
+      text-align: center;
+      text-transform: uppercase;
+
+      background: lightblue;
+      border: 1px solid darken($color: lightblue, $amount: 15%);
+      border-radius: 8px;
+      box-shadow: 0 8px 0px darken($color: lightblue, $amount: 15%);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background: darken($color: lightblue, $amount: 15%);
+        border: 1px solid darken($color: lightblue, $amount: 30%);
+        box-shadow: 0 8px 0px darken($color: lightblue, $amount: 30%);
+        color: white;
+      }
+    }
+  }
+  .difficulty {
+    position: relative;
+    width: 100%;
+    height: 10%; //Définir la zone de click         //ZONECLICK
+    margin-top: 15%;
+    display: flex;
+    .difficulty-value {
+      flex: 3;
+      font-size: 50px;
+      letter-spacing: 4px;
+      // color: #ffffff;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      background: none; // suppression des caractéristiques de base du btn
+      border: none;
+
+      &.easy {
+        color: limegreen;
+        text-shadow: 0 1px 0px darken($color: limegreen, $amount: 5%),
+          0 2px 0px darken($color: limegreen, $amount: 10%),
+          0 3px 0px darken($color: limegreen, $amount: 15%);
+      }
+      &.moderate {
+        color: orange;
+        font-size: 29px;
+        text-shadow: 0 1px 0px darken($color: orange, $amount: 5%),
+          0 2px 0px darken($color: orange, $amount: 10%),
+          0 3px 0px darken($color: orange, $amount: 15%);
+      }
+      &.hard {
+        color: orangered;
+        text-shadow: 0 1px 0px darken($color: orangered, $amount: 5%),
+          0 2px 0px darken($color: orangered, $amount: 10%),
+          0 3px 0px darken($color: orangered, $amount: 15%);
+      }
+    }
+    .icon-left {
+      flex: 1;
+      background: url(../../../../assets/left.png) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    .icon-right {
+      flex: 1;
+      background: url(../../../../assets/right.png) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .less-difficult {
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 50%;
+      height: 200%;
+      cursor: pointer;
+    }
+    .more-difficult {
+      position: absolute;
+      top: -50%;
+      right: 0;
+      width: 50%;
+      height: 200%;
+      cursor: pointer;
+    }
+  }
+
+  .difficulty_info {
+    // position: absolute;
+    // top: 59%;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    @media (min-width: 567px) {
+      height: 22%;
+    }
+
+    .infoItem {
+      display: flex;
+      line-height: 300%;
+      color: white;
+      font-weight: bold;
+      .img {
+        height: 40px;
+        width: 40px;
+        margin-right: 6px;
+      }
+      #record {
+        // background: url(../../../../assets/sablier.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      #time {
+        background: url(../../../../assets/sablier.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      #axe {
+        background: url(../../../../assets/hache.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      #tree {
+        background: url(../../../../assets/tree-icon-1.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+    ul {
+      margin: 10px auto;
+      width: max-content;
+      padding: 0;
+    }
+  }
+
+  .rules-btn {
+    width: 60%;
+    padding: 10px;
+    margin: 0 auto;
+    // margin: 2rem auto;
+
+    font-weight: bold;
+    color: darken($color: lightblue, $amount: 40%);
+    text-align: center;
+    text-transform: uppercase;
+    background: lightblue;
+    border: 1px solid darken($color: lightblue, $amount: 15%);
+    border-radius: 8px;
+    box-shadow: 0 4px 0px darken($color: lightblue, $amount: 15%);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background: darken($color: lightblue, $amount: 15%);
+      border: 1px solid darken($color: lightblue, $amount: 30%);
+      box-shadow: 0 4px 0px darken($color: lightblue, $amount: 30%);
+      color: white;
+    }
+  }
+
+  .score_info {
+    // position: absolute;
+    // left: 0%;
+    // top: 69%;
+    // bottom: 193px;
+    width: 100%;
+    height: 20%;
+    margin-top: 15%;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 39px;
+    letter-spacing: 4px;
+    color: white;
+    // color: darken($color: lightblue, $amount: 40%);
+
+    .first-line {
+      display: flex;
+      justify-content: center;
+      // max-height: max-content;;
+      p {
+        margin: auto 0;
+      }
+      .icon-tree {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        background: url(../../../../assets/tree-icon-1.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+    .showBonus {
+      font-size: 25px;
+      color: limegreen;
+    }
+    .scoreText {
+      margin-top: 1em;
+      font-size: x-large;
+      width: 100%;
+    }
+  }
+
+  .rules {
+    width: 80%;
+    border: 2px solid lightblue;
+    margin: 1em auto;
+    width: 80%;
+    padding: 3%;
+    border: 2px solid lightblue;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+
+    overflow: auto;
+    max-height: 63%;
+
+    cursor: ns-resize;
+
+    h2 {
+      margin: 16px 0 16px;
+    }
+
+    p {
+      text-align: left;
+      // margin-bottom: 0;
+    }
+  }
+}

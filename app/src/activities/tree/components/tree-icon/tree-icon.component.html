@@ -1,0 +1,9 @@
+<div class="tree-icon__container" (click)="iconTouched()"
+    [ngStyle]="{ left: X, top: Y, height:iconSize, width:iconSize ,display: display? 'flex' :'none' }">
+    <!-- [class.axe]="iconIsAxe" -->
+
+    <div class="tree-icon" [class.one]="value<=1" [class.two]="value===2" [class.three]="value===3"
+        [class.axe]="iconIsAxe" [class.gold]="iconIsGold">
+    </div>
+
+</div>

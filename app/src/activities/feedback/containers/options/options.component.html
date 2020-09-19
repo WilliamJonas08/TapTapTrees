@@ -1,0 +1,95 @@
+<h1>options</h1>
+
+<div class="options_container">
+  <!-- *ngIf="currentSection==='' -->
+
+  <button class="menu_button" (click)="display('information')">
+    {{ "informations" | translate }}
+  </button>
+  <div id="information" *ngIf="currentSection === 'information'">
+    <h2>Origine du jeu</h2>
+    <p class="text">
+      Le but initial de ce jeu était de pouvoir faire une bonne action tout en
+      jouant et en te mesurant à tes amis. Les clicks récoltés devaient servir à
+      planter des arbres avec Écosia. Malgré le fait qu'il aurait permit de
+      planter des arbres, il aurait eu malgré tout un impact carbone négatif dû
+      aux recherches du navigateur engendrées. Nous espérons malgré tout que ce
+      jeu sera plaisant et nous comptons sur vous pour nous faire parvenir vous
+      suggestions d'améliorations !
+    </p>
+
+    <h2>État actuel du jeu</h2>
+    <p class="text">
+      Le jeu est actuellement en phase de TEST. Il s'agit de voir si il est
+      capable d'engager une communanuté suffisemment grande, permettant
+      d'attirer des publicitaire pour enfin pouvoir reverser des fonds à des
+      sociétés qui pourront planter des arbres (grâces aux publicités générées
+      via l'acquisition des objets 'classiques')
+    </p>
+    <p style="margin-top: 12px">Bon jeu et bonne chance !</p>
+  </div>
+
+  <button class="menu_button" (click)="display('color')" translate>
+    color theme
+  </button>
+  <div *ngIf="currentSection === 'color'">
+    <!-- <button class="menu_button" (click)="display('')" translate>
+          back to options
+        </button> -->
+
+    Nothing to display yet
+  </div>
+
+  <button class="menu_button" (click)="display('language')">
+    {{ "language" | translate }}
+  </button>
+  <div *ngIf="currentSection === 'language'">
+    <!-- <button class="menu_button" (click)="display('')" translate>
+          back to options
+        </button> -->
+
+    <div class="language">
+      <button (click)="swithLanguage('fr')" translate>
+        <span class="french_img"></span>
+        french
+      </button>
+      <button (click)="swithLanguage('en')" translate>
+        <span class="english_img"></span>
+        english (not finished)
+      </button>
+    </div>
+  </div>
+
+  <button class="menu_button" (click)="display('feedback')" translate>
+    send feedback
+  </button>
+  <div
+    id="feedback"
+    class="info_container"
+    *ngIf="currentSection === 'feedback'"
+  >
+    <!-- <button class="menu_button" (click)="display('')" translate>
+          back to options
+        </button> -->
+
+    <div class="feedback_component">
+      <app-feedback></app-feedback>
+    </div>
+  </div>
+
+  <button class="menu_button" (click)="display('logout')" translate>
+    disconnection
+  </button>
+  <div *ngIf="currentSection === 'logout'">
+    <!-- <button class="menu_button" (click)="display('')" translate>
+          back to options
+        </button> -->
+
+    <button class="logout" (click)="logoutUser()" translate>
+      <span class="logout_img"></span>
+      confirm logout
+    </button>
+  </div>
+</div>
+<nav-bar></nav-bar>
+<!-- </div> -->

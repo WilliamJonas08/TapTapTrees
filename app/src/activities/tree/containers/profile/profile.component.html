@@ -1,0 +1,106 @@
+<h1>profil</h1>
+
+<div class="profile-container">
+  <!-- <h1>Profile</h1> -->
+
+  <div class="section">
+    <h2>{{ (user$ | async).displayName }}</h2>
+    <p>Mail : {{ (this.user$ | async).email }}</p>
+    <!-- {{Pseudo}} -->
+  </div>
+
+  <div class="section">
+    <h2>Statistiques</h2>
+
+    <div class="stats-data">
+      <!-- Nb arbres plantés total -->
+      <div class="stat-item">
+        <div class="img" id="total-planted"></div>
+        <div class="text">
+          <h3>0</h3>
+          <p>Total planted</p>
+        </div>
+      </div>
+
+      <!-- Nb arbres joués par le joueur -->
+      <div class="stat-item">
+        <div class="img" id="clicked"></div>
+        <div class="text">
+          <h3>{{ (this.user$ | async).plantedTrees }}</h3>
+          <p>Trees clicked</p>
+        </div>
+      </div>
+
+      <!-- % Tree Bonus -->
+      <div class="stat-item">
+        <div class="img" id="tree-bonus"></div>
+        <div class="text">
+          <h3>{{ this.percentageTreeBonus }}%</h3>
+          <p>Tree bonus</p>
+        </div>
+      </div>
+
+      <!-- % Gold Bonus -->
+      <div class="stat-item">
+        <div class="img" id="gold-bonus"></div>
+        <div class="text">
+          <h3>{{ this.percentageGoldBonus }}%</h3>
+          <p>Gold bonus</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="section">
+    <h2>Amis</h2>
+    <p>Not available yet</p>
+  </div>
+  <div class="section">
+    <h2>Succès</h2>
+    <p>Not available yet</p>
+  </div>
+  <div class="section" *ngIf="(this.user$|async).uid==='HEYDjqDnELeWcmfoWnr7Bbqqvqo1'">
+    <h2>TODO-LIST</h2>
+<p>Clean tous les components inutiles</p>
+<p>Commit et push la nouvelle app</p>
+    <!-- <p>Replay trop rapide</p> -->
+    
+    <h2>VERIFIER</h2>
+    <p>(+migration D2JA intégrée): reconnaissance du record du user dans le leaderboard si id = id result sinon possibilité de triche</p>
+    <p>???? icons or qui disparaissent</p>
+    <p>
+      Bug destruction d'icones d'or lorsque enfin cliqués (ou lorsque pas
+      cliqués !!
+    </p>
+    
+    <h2>A VOIR</h2>
+    <p>Leaderboard: top clickers</p>
+    <p>D2tecter auto-click de damien</p>
+    <p>Exporter objets shop dans bdd</p>
+    <p>Display high scores / difficulty</p>
+    <p>Lors de EndGame: mettre un délai avec mistake mode de 1s avant redirection setup/score (bloquer le click sur les items)</p>
+    <p>page de profil de joueur si on clique dessus dans le top</p>
+    <p>ajout d'une description utilisateur dans le profil</p>
+    <p>Traduire</p>
+    <p>----</p>
+    <p>Utilisation resolvers pour chargement de pages toujours optimal</p>
+    <!-- https://makina-corpus.com/blog/metier/2018/routing-angular-optimisez-le-rendu-au-changement-de-page -->
+      <p>
+        - animation temporaire fin de partie sur le nombre de pièces d'or gagnées
+      </p>
+    <p>
+      Augmentation du prix d'achat des classiques en fonction du nombre
+      d'achetés
+    </p>
+    <p>Création des modales</p>
+    <!-- https://blog.bitsrc.io/creating-modals-in-angular-cb32b126a88e -->
+    <p>
+      - boosters et limitations par parties si different de 1(à associer dans la
+      BDD locale je suppose )
+    </p>
+  </div>
+  <!-- {{user$|async|json}} -->
+</div>
+
+<!-- <header-bar></header-bar> -->
+<nav-bar></nav-bar>

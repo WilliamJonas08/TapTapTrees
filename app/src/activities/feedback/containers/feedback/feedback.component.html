@@ -1,0 +1,44 @@
+<!-- <nav-bar></nav-bar> -->
+
+<div class="feedback-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="text">
+      <p>
+        Vous pouvez nous faire part de vos retours, vos impressions, des
+        éventuels bugs rencontrés, voire vos idées d'amélioration ici si vous le
+        souhaitez !
+      </p>
+      <p>Cela nous aidera beaucoup !</p>
+    </div>
+
+    <!-- <label class="email">
+            <input type="email" placeholder="Email adress" formControlName="email" *ngIf="displayEmail">
+            <button type="button" (click)="toggleDisplayEmail()" #email>{{displayEmail? 'Ne pas mentionner mon mail' : 'Mentionner mon mail'}}</button>
+        </label> -->
+
+    <label class="feedback">
+      <input
+        type="text"
+        placeholder="Please enter your remark !"
+        formControlName="feedback"
+      />
+    </label>
+
+    <!-- <div class="error" *ngIf="emailFormat && displayEmail">
+            Invalid Email format
+        </div> -->
+
+    <div class="error" *ngIf="feedbackInvalid">
+      Feedback is required if you want to send us a usefull help remark !
+    </div>
+
+    <!-- <ng-content select=".error"></ng-content> -->
+
+    <div class="feedback-form__action">
+      <button type="submit" [disabled]="form.invalid">
+        <span class="disabled_img" *ngIf="form.invalid"></span>
+        Send feedback
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+{
+   "play":"jouer",
+
+   "leaderboard":"classement",
+   "options":"options",
+
+   "easy":"facile",
+   "moderate":"moyen",
+   "hard":"difficile",
+
+   "informations":"informations",
+   "language":"langue",
+   "color theme":"thème de couleur",
+   "send feedback":"envoyer un avis",
+   "disconnection":"déconnection",
+   "back to options":"retour aux options",
+
+   "french":"français",
+   "english":"anglais",
+   "confirm logout":"confirmer la déconnection",
+   "retry":"rejouer"
+}

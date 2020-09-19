@@ -1,0 +1,128 @@
+:host ::ng-deep {
+  background-color: #2f2f5d;
+  position: absolute; //rel
+  top: 0;//
+  height: 60px;//
+  width: 100%; //
+  display: flex;
+
+  .counter {
+    display: flex;
+    margin: 0, auto;
+    width: 100%;
+
+    position: relative;
+
+    .score {
+      justify-content: center;
+      color: lightblue;
+      font-weight: bold;
+      flex: 1;
+      font-size: 25px;
+      line-height: 230%; //centrer verticalement le score
+      padding: 0 3%; // 15px;
+      // border-right: 8px solid lightblue;
+      &.axeTouched {
+        color: darken(red, 1%);
+        // border-right: 8px solid red;
+      }
+      &.fireMode {
+        color: orange
+        // border-right: 8px solid orange;
+      }
+
+      display: flex;
+      .tree-icon {
+        width: 30px;
+        height: 25px;
+        background: url(../../../../assets/tree-icon-1.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin: auto 0;
+      }
+    }
+
+    .gold {
+      justify-content: center;
+      color: gold;
+      font-weight: bold;
+      flex: 1;
+      font-size: 25px;
+      line-height: 230%; //centrer verticalement le score
+      padding: 0 3%; // 15px;
+      // border-right: 8px solid lightblue;
+      &.axeTouched {
+        color: darken(red, 1%);
+        // border-right: 8px solid red;
+      }
+      &.fireMode {
+        color: orange
+        // border-right: 8px solid orange;
+      }
+
+      display: flex;
+      .gold-icon {
+        width: 30px;
+        height: 25px;
+        background: url(../../../../assets/money.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin: auto 0;
+      }
+    }
+
+    .progress-bar {
+      flex: 5;
+      // padding-right: 5%; //esthétique dans le cas ou la barre était à droite
+      background-color: #2f2f5d;
+
+      .mat-progress-bar {
+        border-radius: 16px;
+        height: 50% !important;
+        transition-duration: 50ms; //essai pour limiter la transition de la progress bar
+
+        .mat-progress-bar-fill::after {
+          background-color: lighten(green, 10%);
+        }
+        .mat-progress-bar-buffer {
+          background-color: lighten($color: #2f2f5d, $amount: 15%);
+        }
+
+        &.midTime {
+          .mat-progress-bar-fill::after {
+            background-color: darken(orange, 10%);
+          }
+        }
+        &.endTime {
+          .mat-progress-bar-fill::after {
+            background-color: darken(red, 1%);
+          }
+        }
+
+        &.axeTouched {
+          .mat-progress-bar-fill::after {
+            background-color: darken(red, 1%);
+          }
+          .mat-progress-bar-buffer {
+            background-color: lighten(red, 10%);
+          }
+        }
+
+        &.fireMode{
+          // .mat-progress-bar-fill::after {
+          //   background-color: darken(orange, 1%);
+          // }
+          .mat-progress-bar-buffer {
+            background-color: lighten(orange, 20%);
+          }
+        }
+      }
+    }
+    // .flame {
+    //   position: absolute;
+    //   left: 1%;
+    //   top: -25%;
+      // La taille de l'icone est gérée directement dans le composant lui même
+    // }
+  }
+}

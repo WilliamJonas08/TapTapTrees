@@ -1,0 +1,157 @@
+:host {
+  width: 100%;
+  height: 10%;
+  // border-top: 12px solid #6161af;
+  // background: #2f2f5d;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+
+  // Positionnnement dans les containers
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  button{
+      flex: 5;
+      // min-height: 50px;
+      border:none;
+      // margin: 10px 3%;
+  }
+  // :first-child {
+  //   flex: 3;
+  //   min-height: 50px;
+  //   margin: 10px 3%;
+  //   // background: orange; //#0e8dbc    cf ngStyle
+
+  //   text-transform: uppercase;
+  //   font-weight: bold;
+  //   font-size: 25px;
+  //   color: #ffffff;
+  //   text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+  //     0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+  //     0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+  //     0 20px 20px rgba(0, 0, 0, 0.15);
+  // }
+
+  // button {
+  //   padding: 0px;
+  //   // border: 4px solid #2f2f5d;
+  //   box-shadow: 0 3px 4px rgba(0, 0, 0, 1);
+  //   border: 1px solid #2f2f5d;
+  //   border-radius: 10px;
+  //   position: relative;
+  //   overflow: hidden;
+  //   cursor: pointer;
+
+  //   // &.active {
+  //   //   opacity: 0.8;
+  //   // }
+  //   &:hover {
+  //     opacity: 0.8;
+  //   }
+  // }
+
+  // .difficulty {
+  //   //:nth-child(2)
+  //   background: url(../../../../assets/crâne.png) no-repeat;
+  //   background-size: contain;
+  //   background-position: center;
+  //   // &.easy {
+  //   //   background: url(../../../../assets/easy.png) no-repeat;
+  //   //   background-size: contain;
+  //   //   background-position: center;
+  //   // }
+  //   // &.moderate {
+  //   //   background: url(../../../../assets/moderate.png) no-repeat;
+  //   //   background-size: contain;
+  //   //   background-position: center;
+  //   // }
+  //   // &.hard {
+  //   //   background: url(../../../../assets/hard.png) no-repeat;
+  //   //   background-size: contain;
+  //   //   background-position: center;
+  //   // }
+  // }
+
+  // .leaderboard {
+  //   //:nth-child(3)
+  //   background: url(../../../../assets/leaderboard.png) no-repeat;
+  //   background-size: contain;
+  //   background-position: center;
+  // }
+
+  // .options {
+  //   //:nth-child(4)
+  //   background: url(../../../../assets/option.png) no-repeat;
+  //   background-size: contain;
+  //   background-position: center;
+  //   // opacity: 0.6;
+  // }
+
+  // :nth-child(n + 2) {
+  //   flex: 1;
+  //   max-height: 40px;
+  //   margin: 14px 3%; //Pour les centrer verticalement
+  //   background-color: lightskyblue;
+  //   text-shadow: -1px 0 0 rgba(0, 0, 0, 0.8),
+  //     //Effet bordure de texte
+  //       1px 0 0 rgba(0, 0, 0, 0.8),
+  //     0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(0, 0, 0, 0.8);
+  // }
+  
+  .profile{
+    background: url(../../../../assets/nav/profile-1.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    &.active{
+      background: url(../../../../assets/nav/profile-2.png) no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  
+  .garden{
+    background: url(../../../../assets/nav/garden-1.png) no-repeat;      
+    background-size: contain;
+      background-position: center;
+      &.active{
+        background: url(../../../../assets/nav/garden-2.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+
+  .game{
+    background: url(../../../../assets/nav/game-1.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    &.active{
+      background: url(../../../../assets/nav/game-2.png) no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  .leaderboard{
+    background: url(../../../../assets/nav/leaderboard-1.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    &.active{
+      background: url(../../../../assets/nav/leaderboard-2.png) no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  .options{
+    background: url(../../../../assets/nav/options-1.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    &.active{
+      background: url(../../../../assets/nav/options-2.png) no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+}

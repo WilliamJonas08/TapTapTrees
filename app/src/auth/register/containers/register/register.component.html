@@ -1,0 +1,7 @@
+<auth-form [type]="'register'" (submitted)="registerUser($event)">
+    <h1>Register</h1>
+    <a routerLink="/auth/login">Already have an account ?</a>
+    <!-- <button type="submit">Create Account</button> -->
+    <p>Create Account</p>
+    <div class="error" *ngIf="error">{{error}}</div>
+</auth-form>

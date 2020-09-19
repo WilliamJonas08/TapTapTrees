@@ -1,0 +1,27 @@
+<!-- TODO: exporter la nav-bar dans le app module pour la laisser de manièr permanente -->
+
+<button type="button" class="profile" routerLink="/tree/profile" routerLinkActive="active"></button>
+
+<button type="button" class="garden" routerLink="/tree/garden" routerLinkActive="active"></button>
+
+<button type="button" class="game" routerLink="/tree/setup" routerLinkActive="active"></button>
+
+<button type="button" class="leaderboard" routerLink="/tree/leaderboard" routerLinkActive="active"></button>
+
+<button type="button" class="options" routerLink="/options" routerLinkActive="active">
+    <!-- <span class="options"></span> -->
+    <!-- *ngIf="(user$|async)?.authenticated" -->
+</button>
+
+<!-- <button routerLink="/tree/game" routerLinkActive="active"
+    [ngStyle]="{background:(currentDifficulty==='easy')? 'limegreen':(currentDifficulty==='moderate')? 'orange':'orangered'}"
+    translate>
+    play
+</button> -->
+
+<!-- <button type="button" (click)="toggleDifficulty()" class="difficulty" routerLink="/tree/setup"
+    [ngStyle]="{backgroundColor:(currentDifficulty==='easy')? 'limegreen':(currentDifficulty==='moderate')? 'orange':'orangered'}">
+</button> -->
+<!-- [ngStyle]="{backgroundColor:(currentDifficulty==='easy')? 'limegreen':(currentDifficulty==='moderate')? 'orange':'orangered'}" -->
+<!-- [class.easy]="currentDifficulty==='easy'" [class.moderate]="currentDifficulty==='moderate'" [class.hard]="currentDifficulty==='hard'" -->
+<!-- <span class="difficulty"></span> -->

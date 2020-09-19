@@ -1,0 +1,129 @@
+<div class="setup_container">
+
+  <div *ngIf="!showRules">
+    <header-bar></header-bar>
+    <div class="play_button" (click)="play()">
+      <button translate>play</button>
+    </div>
+
+    <div class="difficulty">
+      <div class="icon-left"></div>
+      <button
+        class="difficulty-value"
+        [class.easy]="currentDifficulty === 'easy'"
+        [class.moderate]="currentDifficulty === 'moderate'"
+        [class.hard]="currentDifficulty === 'hard'"
+      >
+        {{ currentDifficulty | translate }}</button
+      ><!-- sert juste à centrer verticalement le texte -->
+      <div class="icon-right"></div>
+
+      <a class="less-difficult" (click)="toggleDifficulty('less')"></a>
+      <a class="more-difficult" (click)="toggleDifficulty('more')"></a>
+    </div>
+
+    <div class="difficulty_info" *ngIf="!gameHaveBeenPlayedBefore">
+
+      <ul *ngIf="currentDifficulty === 'easy'">
+        <!-- <li class="infoItem">
+          <div class="img" id="record"></div>
+          Meilleur score : {{this.userRecords?this.userRecords["easy"]:0}}
+        </li> -->
+        <li class="infoItem">
+          <div class="img" id="time"></div>
+          Écoulement lent du temps
+        </li>
+        <li class="infoItem">
+          <div class="img" id="axe"></div>
+          Attention aux haches
+        </li>
+      </ul>
+
+      <ul *ngIf="currentDifficulty === 'moderate'">
+        <!-- <li class="infoItem">
+          <div class="img" id="record"></div>
+          Meilleur score : {{this.userRecords?this.userRecords["moderate"]:0}}
+        </li> -->
+        <li class="infoItem">
+          <div class="img" id="time"></div>
+          Écoulement modéré du temps
+        </li>
+        <li class="infoItem">
+          <div class="img" id="axe"></div>
+          Attention aux haches
+        </li>
+        <li class="infoItem">
+          <div class="img" id="tree"></div>
+          2 icônes simultanément
+        </li>
+      </ul>
+
+      <ul *ngIf="currentDifficulty === 'hard'">
+        <!-- <li class="infoItem">
+          <div class="img" id="record"></div>
+          Meilleur score : {{this.userRecords?this.userRecords["hard"]:0}}
+        </li> -->
+        <li class="infoItem">
+          <div class="img" id="time"></div>
+          Écoulement rapide du temps
+        </li>
+        <li class="infoItem">
+          <div class="img" id="axe"></div>
+          Attention aux haches
+        </li>
+        <li class="infoItem">
+          <div class="img" id="tree"></div>
+          3 icônes simultanément
+        </li>
+      </ul>
+    </div>
+
+    <button
+      type="button"
+      class="rules-btn"
+      (click)="showRules = true"
+      *ngIf="!gameHaveBeenPlayedBefore"
+    >
+      How to play
+    </button>
+
+    <div class="score_info" *ngIf="gameHaveBeenPlayedBefore">
+      <div class="first-line">
+        <p>Score: {{ displayedScore }}</p>
+        <div class="icon-tree"></div>
+      </div>
+      <p class="showBonus" *ngIf="showBonus && this.percentageBonusAdded > 0">
+        (+{{ this.percentageBonusAdded }}%)
+      </p>
+      <div class="scoreText" *ngIf="bestScore">new best score !</div>
+    </div>
+  </div>
+
+  <div *ngIf="showRules">
+    <header-bar></header-bar>
+    <button type="button" class="rules-btn" (click)="showRules = false" style="margin: 2rem 0 1rem 0;">
+      Back
+    </button>
+
+    <div class="rules">
+      <h2>Les règles</h2>
+
+      <p>- Cliquer sur les icones d'arbres pour gagner des points et du temps</p>
+      <p>- Ne pas cliquer sur les icônes rouges qui font perdre du temps</p>
+      <p>OBJECTIF : tenir le plus longtemps pour obtenir le meilleur score de la communauté !</p>
+
+      <h2>Astuces</h2>
+
+      <p>- Mode combo : activé après une série de plus de 10 clicks sans erreur
+          (à côté des icônes ou sur des icônes rouges)</p>
+      <p>- Le mode combo te permet de doubler les points obtenus pour chaque icône</p>
+      <p>- Cliquer autant de fois sur les icônes qu'il y a d'arbres</p>
+      <p>- Utiliser des boosters pour activer des capacités spéciales et
+          augmenter ton score !</p>
+      <p>- Possèdes autant d'objets de type "classique" que possible afin
+          d'augmenter ton score et l'or gagné en fin de partie</p>
+
+    </div>
+  </div>
+</div>
+<nav-bar></nav-bar>

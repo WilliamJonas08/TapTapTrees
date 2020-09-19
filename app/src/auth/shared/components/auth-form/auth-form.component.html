@@ -1,0 +1,48 @@
+<div class="auth-form">
+  <div class="title">
+    <ng-content select="h1"></ng-content>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      <input type="email" placeholder="Email adress" formControlName="email" />
+    </label>
+
+    <div class="error" *ngIf="emailFormat">Invalid Email format</div>
+
+    <label>
+      <input
+        type="password"
+        placeholder="Enter password"
+        formControlName="password"
+      />
+    </label>
+
+    <div class="error" *ngIf="passwordInvalid">Password is required</div>
+
+    <label *ngIf="type === 'register'" class="pseudo">
+      <input
+        type="text"
+        placeholder="Enter your Pseudo"
+        formControlName="pseudo"
+        maxlength="15"
+      />
+    </label>
+
+    <ng-content select=".error"></ng-content>
+
+    <div class="auth-form__action" [class.disabled]="form.invalid">
+      <!-- <span class="disabled_img" *ngIf="form.invalid"></span> -->
+      <button type="submit">
+        <div class="disabled_img" *ngIf="form.invalid"></div>
+          <!-- On injecte le p plutot que le bouton entier afin de pouvoir controler l'aspect du bouton -->
+          <ng-content select="p" ></ng-content>
+        </button>
+    </div>
+
+    <div class="auth-form__toggle">
+      <ng-content select="a"></ng-content>
+    </div>
+  </form>
+</div>
+<!-- {{this.form.value|json}} -->

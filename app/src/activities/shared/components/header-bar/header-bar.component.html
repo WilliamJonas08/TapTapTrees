@@ -1,0 +1,29 @@
+<div class="pseudo">
+  <div class="item-container">
+    <p>{{ (this.user$ | async).displayName }}</p>
+  </div>
+</div>
+
+<div class="gold">
+  <div class="item-container">
+    <div class="img"></div>
+      <p>
+        {{
+          (this.user$ | async).gold === undefined ? 0 : (this.user$ | async).gold
+        }}
+      </p>
+  </div>
+</div>
+<!-- <div class="plantedTrees">
+  <div class="item-container">
+    <div class="img"></div>
+    <p>
+      {{
+        (this.user$ | async).plantedTrees === undefined
+          ? 0
+          : (this.user$ | async).plantedTrees
+      }}
+    </p>
+  </div>
+</div> -->
+

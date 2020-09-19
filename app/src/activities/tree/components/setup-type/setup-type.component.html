@@ -1,0 +1,17 @@
+<div class="setup-type">
+  <div class="setup-type__pane" *ngFor="let selector of selectors" [class.active]="selector === value"
+    (click)="setSelected(selector)" [ngStyle]="{ 
+      'background': !(selector===value)? '' :(selector==='easy')? 'limegreen':(selector==='moderate')? 'orange':'orangered',
+      'margin-right': (selector==='moderate')? '5%' : '0',
+      'margin-left': (selector==='moderate')? '5%' : '0'
+    }">
+    <!-- [ngStyle]="{ 
+      background: (selector==='easy')? 'lightgreen':(selector==='moderate')? 'orange':'red'
+    }" -->
+
+    <!-- <img src="/app/src/assets/{{ selector }}.svg">   -->
+    <!-- ATTENTION pas bien traduit -->
+    <p>{{ selector }}</p>
+
+  </div>
+</div>

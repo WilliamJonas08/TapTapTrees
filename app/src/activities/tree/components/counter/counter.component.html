@@ -1,0 +1,28 @@
+<div class="counter">
+  <div
+    class="score"
+    [class.axeTouched]="axeTouched"
+    [class.fireMode]="fireMode"
+  >
+    <!-- <flame *ngIf="fireMode" class="flame"></flame> -->
+    {{ score }}
+    <div class="tree-icon"></div>
+  </div>
+
+  <div class="progress-bar">
+    <mat-progress-bar
+      [value]="timeCounter"
+      [class.midTime]="timeCounter < 60"
+      [class.endTime]="timeCounter < 30"
+      [class.axeTouched]="axeTouched"
+      [class.fireMode]="fireMode"
+    ></mat-progress-bar>
+    <!-- On était pas obligés de mettre la définition de la classe particulière "axeTouched" si profond dans le composant -->
+  </div>
+
+  <div class="gold" [class.axeTouched]="axeTouched" [class.fireMode]="fireMode">
+    {{ goldCollected }}
+    <div class="gold-icon"></div>
+  </div>
+</div>
+<!-- <progress class="time-counter" max="100" [value]="timeCounter"></progress> -->

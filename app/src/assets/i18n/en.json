@@ -1,0 +1,18 @@
+{
+    "play": "play",
+    "leaderboard": "leaderboard",
+    "options": "options",
+    "easy": "easy",
+    "moderate": "moderate",
+    "hard": "hard",
+    "informations": "informations",
+    "language": "language",
+    "color theme": "color theme",
+    "send feedback": "send feedback",
+    "disconnection": "disconnection",
+    "back to options": "back to options",
+    "french": "french",
+    "english": "english",
+    "confirm logout": "confirm logout",
+    "retry":"retry"
+}

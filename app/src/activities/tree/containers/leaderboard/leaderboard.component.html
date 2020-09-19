@@ -1,0 +1,58 @@
+<h1 translate>Leaderboard</h1>
+
+<div class="leaderboard_container">
+  <div class="controls">
+    <a
+      (click)="_displayDifficulty = 'easy'"
+      [class.active]="_displayDifficulty === 'easy'"
+      translate
+      >easy</a
+    >
+    <a
+      (click)="_displayDifficulty = 'moderate'"
+      [class.active]="_displayDifficulty === 'moderate'"
+      style="margin: 0 2%"
+      translate
+      >moderate</a
+    >
+    <a
+      (click)="_displayDifficulty = 'hard'"
+      [class.active]="_displayDifficulty === 'hard'"
+      translate
+      >hard</a
+    >
+  </div>
+
+  <div class="results">
+    <!-- [displayName]="this.displayName" -->
+    <leaderboard-item
+      *ngFor="
+        let leaderboardResult of leaderboard[_displayDifficulty];
+        let i = index
+      "
+      [isPlayer]="this.displayName === leaderboardResult.displayName"
+      [data]="leaderboardResult"
+      [rank]="i + 1"
+    >
+    </leaderboard-item>
+
+    <!-- <leaderboard-item class="unranked" [displayName]="this.displayName" [data]="leaderboard[_displayDifficulty][0]" [rank]="'-'">
+            </leaderboard-item> -->
+    <leaderboard-item
+      class="unranked"
+      *ngIf="userResultOutsideLeaderboard[_displayDifficulty] !== null"
+      [isPlayer]="
+        this.displayName ===
+        userResultOutsideLeaderboard[_displayDifficulty].displayName
+      "
+      [data]="userResultOutsideLeaderboard[_displayDifficulty]"
+      [rank]="'-'"
+    >
+      <!-- [displayName]="this.displayName" -->
+    </leaderboard-item>
+
+  </div>
+
+  <!-- <header-bar></header-bar> -->
+</div>
+<nav-bar></nav-bar>

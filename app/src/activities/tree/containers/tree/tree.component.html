@@ -1,0 +1,39 @@
+<div class="game-container" [class.mistake]="mistakeMode" [class.combo]="fireMode"
+    [@comboBorderPulse]="fireMode? comboEventTargetState:false" (@comboBorderPulse.done)="onComboPulseEventEnds($event)">
+
+    <counter [score]='result.score' [timeCounter]="timeCounter" [fireMode]="fireMode"
+        [axeTouchedSubject]="axeTouchedSubject" [goldCollected]="goldCollected" class="counter">
+        <!-- (@comboBorderPulse.done)="onAnimationBottomEventEnds($event)" -->
+    </counter>
+    <!-- [comboCounter]="comboCounter" -->
+
+    <div class="plate">
+
+        <!-- ATTENTION : on place le template iconRef hors du plate_wrapper pour ne pas détecter les clicks sur plate_wrapper lorsque l'icon est cliqué (les icons sont positionnés de manière absolute de toute façon) -->
+        <ng-template #iconRef></ng-template> <!-- impossible : (touched)="onIconTouched()"-->
+
+        <div class="plate__wrapper" (click)="restartCombo()"></div>
+    </div>
+
+    <div class="boost-bar">
+        <button *ngFor="let booster of boostersArray" class="boost-btn" (click)="useBooster(booster)" [disabled]="booster.boosterUsed ||  displayCountdown">
+            <div class="counter">{{booster.number}}</div>
+            <div class="img" [id]="booster.itemName"></div>
+        </button>
+    </div>
+
+    <!-- Retour vers le setup -->
+    <div class="exit-btn" (click)="leaveGame()"></div>
+
+
+    <div class="countdown" [ngStyle]="{display:displayCountdown? 'flex' : 'none'}">
+        <span>{{countdown}}</span>
+    </div>
+
+    <div class="combo-info" [ngStyle]="{display:displayComboInfo? 'flex' : 'none'}">
+        <span>COMBO MODE</span>
+    </div>
+
+</div>
+
+<div class="game-blocker" *ngIf="gameBloqued"></div>

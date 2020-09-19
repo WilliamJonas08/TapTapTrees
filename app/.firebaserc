@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "fir-app-e94c4"
+  },
+  "targets": {
+    "fir-app-e94c4": {
+      "hosting": {
+        "app": [
+          "fir-app-e94c4"
+        ]
+      }
+    }
+  }
+}

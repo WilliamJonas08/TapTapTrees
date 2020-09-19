@@ -1,0 +1,293 @@
+$fireColor: rgb(255,80,0);
+$fireColorT: rgba(255,80,0,0);
+$dur: 1s;
+$blur: 0.02em;
+$fireRad: 3em;
+$parts: 50;
+$partSize: 5em;
+
+// body {
+// 	background-color: rgb(48,8,8);
+// 	margin: 0;
+// }
+.fire {
+	font-size: 15%; //24px // LES AUTREES UNITÉS SONT RELATIVES À LA TAILLE DE LA POLICE
+	filter: blur($blur);
+	-webkit-filter: blur($blur);
+	margin: 3em auto 0 auto;
+	position: relative;
+	width: 10em;
+	height: 12em;
+}
+.particle {
+	animation: rise $dur ease-in infinite;
+	background-image: radial-gradient($fireColor 20%,$fireColorT 70%);
+	border-radius: 50%;
+	mix-blend-mode: screen;
+	opacity: 0;
+	position: absolute;
+	bottom: 0;
+	width: $partSize;
+	height: $partSize;
+	// spread particles out in time and x-position to get desired effect
+	@for $p from 1 through $parts {
+		&:nth-of-type(#{$p}) {
+			animation-delay: $dur * random();
+			left: calc((100% - #{$partSize}) * #{($p - 1)/$parts});
+		}
+	}
+}
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(0) scale(1);
+	}
+	25% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-10em) scale(0);
+	}
+}
+
+// body {
+//     background-color: #300808;
+//     margin: 0;
+//   }
+  
+//   .fire {
+//     font-size: 24px;
+//     filter: blur(0.02em);
+//     -webkit-filter: blur(0.02em);
+//     margin: 3em auto 0 auto;
+//     position: relative;
+//     width: 10em;
+//     height: 12em;
+//   }
+  
+//   .particle {
+//     animation: rise 1s ease-in infinite;
+//     background-image: radial-gradient(#ff5000 20%, rgba(255, 80, 0, 0) 70%);
+//     border-radius: 50%;
+//     mix-blend-mode: screen;
+//     opacity: 0;
+//     position: absolute;
+//     bottom: 0;
+//     width: 5em;
+//     height: 5em;
+//   }
+//   .particle:nth-of-type(1) {
+//     animation-delay: 0.7200896603s;
+//     left: calc((100% - 5em) * 0);
+//   }
+//   .particle:nth-of-type(2) {
+//     animation-delay: 0.6732364682s;
+//     left: calc((100% - 5em) * 0.02);
+//   }
+//   .particle:nth-of-type(3) {
+//     animation-delay: 0.6593323806s;
+//     left: calc((100% - 5em) * 0.04);
+//   }
+//   .particle:nth-of-type(4) {
+//     animation-delay: 0.9553702698s;
+//     left: calc((100% - 5em) * 0.06);
+//   }
+//   .particle:nth-of-type(5) {
+//     animation-delay: 0.6762496557s;
+//     left: calc((100% - 5em) * 0.08);
+//   }
+//   .particle:nth-of-type(6) {
+//     animation-delay: 0.0141393686s;
+//     left: calc((100% - 5em) * 0.1);
+//   }
+//   .particle:nth-of-type(7) {
+//     animation-delay: 0.9942659146s;
+//     left: calc((100% - 5em) * 0.12);
+//   }
+//   .particle:nth-of-type(8) {
+//     animation-delay: 0.3442784774s;
+//     left: calc((100% - 5em) * 0.14);
+//   }
+//   .particle:nth-of-type(9) {
+//     animation-delay: 0.1390589954s;
+//     left: calc((100% - 5em) * 0.16);
+//   }
+//   .particle:nth-of-type(10) {
+//     animation-delay: 0.0607889422s;
+//     left: calc((100% - 5em) * 0.18);
+//   }
+//   .particle:nth-of-type(11) {
+//     animation-delay: 0.7791418133s;
+//     left: calc((100% - 5em) * 0.2);
+//   }
+//   .particle:nth-of-type(12) {
+//     animation-delay: 0.983263475s;
+//     left: calc((100% - 5em) * 0.22);
+//   }
+//   .particle:nth-of-type(13) {
+//     animation-delay: 0.0423498138s;
+//     left: calc((100% - 5em) * 0.24);
+//   }
+//   .particle:nth-of-type(14) {
+//     animation-delay: 0.9284999359s;
+//     left: calc((100% - 5em) * 0.26);
+//   }
+//   .particle:nth-of-type(15) {
+//     animation-delay: 0.9438348156s;
+//     left: calc((100% - 5em) * 0.28);
+//   }
+//   .particle:nth-of-type(16) {
+//     animation-delay: 0.9896989859s;
+//     left: calc((100% - 5em) * 0.3);
+//   }
+//   .particle:nth-of-type(17) {
+//     animation-delay: 0.3475448894s;
+//     left: calc((100% - 5em) * 0.32);
+//   }
+//   .particle:nth-of-type(18) {
+//     animation-delay: 0.2021794373s;
+//     left: calc((100% - 5em) * 0.34);
+//   }
+//   .particle:nth-of-type(19) {
+//     animation-delay: 0.3681333244s;
+//     left: calc((100% - 5em) * 0.36);
+//   }
+//   .particle:nth-of-type(20) {
+//     animation-delay: 0.7095401654s;
+//     left: calc((100% - 5em) * 0.38);
+//   }
+//   .particle:nth-of-type(21) {
+//     animation-delay: 0.2865353093s;
+//     left: calc((100% - 5em) * 0.4);
+//   }
+//   .particle:nth-of-type(22) {
+//     animation-delay: 0.84702592s;
+//     left: calc((100% - 5em) * 0.42);
+//   }
+//   .particle:nth-of-type(23) {
+//     animation-delay: 0.0358407118s;
+//     left: calc((100% - 5em) * 0.44);
+//   }
+//   .particle:nth-of-type(24) {
+//     animation-delay: 0.3465968359s;
+//     left: calc((100% - 5em) * 0.46);
+//   }
+//   .particle:nth-of-type(25) {
+//     animation-delay: 0.9718221102s;
+//     left: calc((100% - 5em) * 0.48);
+//   }
+//   .particle:nth-of-type(26) {
+//     animation-delay: 0.1175435965s;
+//     left: calc((100% - 5em) * 0.5);
+//   }
+//   .particle:nth-of-type(27) {
+//     animation-delay: 0.3452253652s;
+//     left: calc((100% - 5em) * 0.52);
+//   }
+//   .particle:nth-of-type(28) {
+//     animation-delay: 0.1991487776s;
+//     left: calc((100% - 5em) * 0.54);
+//   }
+//   .particle:nth-of-type(29) {
+//     animation-delay: 0.5052397712s;
+//     left: calc((100% - 5em) * 0.56);
+//   }
+//   .particle:nth-of-type(30) {
+//     animation-delay: 0.814936883s;
+//     left: calc((100% - 5em) * 0.58);
+//   }
+//   .particle:nth-of-type(31) {
+//     animation-delay: 0.5187142524s;
+//     left: calc((100% - 5em) * 0.6);
+//   }
+//   .particle:nth-of-type(32) {
+//     animation-delay: 0.7468213368s;
+//     left: calc((100% - 5em) * 0.62);
+//   }
+//   .particle:nth-of-type(33) {
+//     animation-delay: 0.7908134656s;
+//     left: calc((100% - 5em) * 0.64);
+//   }
+//   .particle:nth-of-type(34) {
+//     animation-delay: 0.5555405232s;
+//     left: calc((100% - 5em) * 0.66);
+//   }
+//   .particle:nth-of-type(35) {
+//     animation-delay: 0.1292415796s;
+//     left: calc((100% - 5em) * 0.68);
+//   }
+//   .particle:nth-of-type(36) {
+//     animation-delay: 0.864200914s;
+//     left: calc((100% - 5em) * 0.7);
+//   }
+//   .particle:nth-of-type(37) {
+//     animation-delay: 0.1111199663s;
+//     left: calc((100% - 5em) * 0.72);
+//   }
+//   .particle:nth-of-type(38) {
+//     animation-delay: 0.6521564018s;
+//     left: calc((100% - 5em) * 0.74);
+//   }
+//   .particle:nth-of-type(39) {
+//     animation-delay: 0.699677135s;
+//     left: calc((100% - 5em) * 0.76);
+//   }
+//   .particle:nth-of-type(40) {
+//     animation-delay: 0.2550057635s;
+//     left: calc((100% - 5em) * 0.78);
+//   }
+//   .particle:nth-of-type(41) {
+//     animation-delay: 0.7688465779s;
+//     left: calc((100% - 5em) * 0.8);
+//   }
+//   .particle:nth-of-type(42) {
+//     animation-delay: 0.8129101914s;
+//     left: calc((100% - 5em) * 0.82);
+//   }
+//   .particle:nth-of-type(43) {
+//     animation-delay: 0.2223163691s;
+//     left: calc((100% - 5em) * 0.84);
+//   }
+//   .particle:nth-of-type(44) {
+//     animation-delay: 0.6369472302s;
+//     left: calc((100% - 5em) * 0.86);
+//   }
+//   .particle:nth-of-type(45) {
+//     animation-delay: 0.3056303122s;
+//     left: calc((100% - 5em) * 0.88);
+//   }
+//   .particle:nth-of-type(46) {
+//     animation-delay: 0.7484225051s;
+//     left: calc((100% - 5em) * 0.9);
+//   }
+//   .particle:nth-of-type(47) {
+//     animation-delay: 0.5590584089s;
+//     left: calc((100% - 5em) * 0.92);
+//   }
+//   .particle:nth-of-type(48) {
+//     animation-delay: 0.803130904s;
+//     left: calc((100% - 5em) * 0.94);
+//   }
+//   .particle:nth-of-type(49) {
+//     animation-delay: 0.4455170292s;
+//     left: calc((100% - 5em) * 0.96);
+//   }
+//   .particle:nth-of-type(50) {
+//     animation-delay: 0.4408985334s;
+//     left: calc((100% - 5em) * 0.98);
+//   }
+  
+//   @keyframes rise {
+//     from {
+//       opacity: 0;
+//       transform: translateY(0) scale(1);
+//     }
+//     25% {
+//       opacity: 1;
+//     }
+//     to {
+//       opacity: 0;
+//       transform: translateY(-10em) scale(0);
+//     }
+//   }

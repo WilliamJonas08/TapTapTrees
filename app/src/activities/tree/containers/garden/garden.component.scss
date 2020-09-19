@@ -1,0 +1,178 @@
+:host {
+  height: 100%;
+}
+
+.garden-container {
+  // margin-top: 30%;
+
+  max-height: 74%;
+  overflow: auto;
+  cursor: ns-resize;
+  .shop-item {
+    display: flex;
+    margin: 3% 10%;
+    border: 3px solid lightblue;
+    border-radius: 20px;
+
+    // background-color: lighten($color: lightblue, $amount: 10%); // = #d4ebf2;
+
+    .text {
+      flex: 2;
+      color: white;
+      padding: 0 2% 3% 0;
+
+      h3 {
+        font-weight: bold;
+        margin: 0;
+      }
+
+      button {
+        display: flex;
+        padding: 5px;
+        font-weight: bold;
+        color: darken($color: lightblue, $amount: 40%);
+        text-transform: uppercase;
+        background: lightblue;
+        border: 1px solid darken($color: lightblue, $amount: 15%);
+        border-radius: 8px;
+        box-shadow: 0 4px 0px darken($color: lightblue, $amount: 15%);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        width: 100%;
+        justify-content: center;
+        &:hover {
+          background: darken($color: lightblue, $amount: 15%);
+          border: 1px solid darken($color: lightblue, $amount: 30%);
+          box-shadow: 0 4px 0px darken($color: lightblue, $amount: 30%);
+          color: white;
+        }
+        &:disabled {
+          background: darken($color: red, $amount: 15%);
+          border: 1px solid darken($color: red, $amount: 30%);
+          box-shadow: 0 4px 0px darken($color: red, $amount: 30%);
+          color: white;
+        }
+        .gold-icon {
+          width: 25px;
+          height: 20px;
+          background: url(../../../../assets/money.png) no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+    }
+
+    //List of itemNames
+    #tree {
+      background: url(../../../../assets/tree-icon-1.png) no-repeat;
+    }
+    #tree2 {
+      background: url(../../../../assets/tree-icon-2.png) no-repeat;
+    }
+    #Plant-a-tree {
+      background: url(../../../../assets/items/planted-tree.png) no-repeat;
+    }
+    #Plant-a-coin {
+      background: url(../../../../assets/items/planted-coin.png) no-repeat;
+    }
+    #Régime-végétarien {
+      background: url(../../../../assets/items/vegetarien.png) no-repeat;
+    }
+    #Transport-propre {
+      background: url(../../../../assets/items/transport-propre.png) no-repeat;
+    }
+    .img {
+      flex: 1;
+      margin: 0% 2%;
+      background-size: contain !important;
+      background-position: center !important;
+    }
+  }
+
+  .section-description {
+    margin-top: -14px;
+    padding-left: 5%;
+    color: white;
+  }
+  h2 {
+    color: white;
+    font-weight: bold;
+    padding-left: 5%;
+  }
+}
+
+h1 {
+  // position: absolute;
+  // top: 10%;
+  width: 100%;
+  height: 7%;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 3px solid lightblue;
+
+  margin: 0;
+  margin-top: 1%;
+  // padding-bottom: 15px;
+}
+
+.publicity_modal {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  height: 93%;
+
+  //A enlever si plus de pub ?
+  max-height: 93%;
+  overflow: auto;
+
+  .text {
+    color: white;
+    padding: 5%;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  //Choix de quelle bannière afficher selon la taille d'écran
+  // #ig-CrxEIZs8qgKEtRZt{
+    // @media (max-width:567px) {
+      // display: none;
+    // }
+  // }
+  // #ig-aEHNcBKj598wsUVN{
+    // @media (min-width:567px) {
+    //   display: none;
+    // }
+  // }
+
+  .answer {
+    //A remettre si pas de pub qui fait deborder
+    position: absolute;
+    bottom: 0;
+
+    justify-content: center;
+    padding: 5%;
+    width: 100%;
+
+    button {
+      padding: 5px;
+      font-weight: bold;
+      color: darken($color: lightblue, $amount: 40%);
+      text-transform: uppercase;
+      background: lightblue;
+      border: 1px solid darken($color: lightblue, $amount: 15%);
+      border-radius: 8px;
+      box-shadow: 0 4px 0px darken($color: lightblue, $amount: 15%);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 1em;
+      &:hover {
+        background: darken($color: lightblue, $amount: 15%);
+        border: 1px solid darken($color: lightblue, $amount: 30%);
+        box-shadow: 0 4px 0px darken($color: lightblue, $amount: 30%);
+        color: white;
+      }
+    }
+  }
+}

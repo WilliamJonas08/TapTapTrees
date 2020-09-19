@@ -1,0 +1,169 @@
+.game-container {
+  position: relative; //si je dois placer le countdown de manière absolute
+  height: 100%;
+
+  // margin: 0 15px; //Pour afficher les border du game-container
+  @media (min-width: 567px) {
+    //Si pas téléphone
+    margin: auto;
+    // width: 565px; //UNIQUEMENT POUR GÉRER LE PETIT DÉCALAGE DU BACKGROUND QUE SON ABSENCE PROVOQUERAIT
+    height: 650px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  touch-action: none; //TTTTTEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSTTTTTTTTTTTTTTTT
+  //Permet de désactiver les dézoom du tel par exemple
+
+  .plate {
+    width: 100%;
+
+    height: 100%; //A modifier si on change la taille du counter
+    padding-top: 60px; //la taille du counter
+    @media (min-width: 567px) {
+      //TODO
+    }
+
+    .plate__wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    // .img {
+    //   width: 100%;
+    //   height: 100%;
+    // }
+  }
+
+  .boost-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    // background-color: darken($color: #2f2f5d, $amount: 4%);
+    background-color: #2f2f5d;
+    padding: 5px;
+    padding-right: 15%; //Laisser 15% à l'exit btn
+    .boost-btn {
+      position: relative;
+      max-width: 30%;
+      flex: 1;
+      height: 50px;
+      margin: 0 auto;
+      background-color: lightblue;
+      border-radius: 15px;
+
+      .counter {
+        position: absolute;
+        top: 0;
+        left: 8%;
+        font-weight: bold;
+        color: white;
+      }
+      #Régime-végétarien {
+        background: url(../../../../assets/items/vegetarien.png) no-repeat;
+      }
+      #Transport-propre {
+        background: url(../../../../assets/items/transport-propre.png) no-repeat;
+      }
+      .img {
+        width: 50px; //à surveiller en fct du nombre
+        height: 100%;
+        margin: 0 auto;
+        background-size: contain !important;
+        background-position: center !important;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .exit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15%;
+    height: 60px;
+    background: url(../../../../assets/exitGame.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .countdown {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 37%;
+    left: 0%;
+
+    span {
+      font-size: 110px;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      // padding: 28%;
+      color: #2f2f5d;
+      line-height: normal;
+      text-shadow: 2px 0 0 lightblue, -2px 0 0 lightblue, 0 2px 0 lightblue,
+        0 -2px 0 lightblue, 1px 1px lightblue, -1px -1px 0 lightblue,
+        1px -1px 0 lightblue, -1px 1px 0 lightblue;
+    }
+  }
+
+  .combo-info {
+    pointer-events:none; //Permet de cliquer à travers
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 37%;
+    left: 0%;
+
+    span {
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      // padding: 28%;
+      color: orange;
+      line-height: normal;
+      text-shadow: 2px 0 0 lightblue, -2px 0 0 lightblue, 0 2px 0 lightblue,
+        0 -2px 0 lightblue, 1px 1px lightblue, -1px -1px 0 lightblue,
+        1px -1px 0 lightblue, -1px 1px 0 lightblue;
+    }
+  }
+
+  // Controle de la couleur des bordures
+  border: 8px solid lightblue;
+  // .counter {
+  //   border-bottom: 8px solid lightblue;
+  // }
+  &.mistake {
+    border: 8px solid red;
+    //   .counter {
+    //     border-bottom: 8px solid red;
+    //   }
+  }
+  // &.combo {
+  //   border: 8px solid orange;
+  //   .counter {
+  //     border-bottom: 8px solid orange;
+  //   }
+  // }
+}
+
+.game-blocker{
+  position: absolute;
+  top:0;
+  z-index: 1000;
+  width: 100%;
+  height: 110%;
+  background: lightblue;
+  opacity: 0.5;
+}

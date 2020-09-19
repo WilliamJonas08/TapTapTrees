@@ -1,0 +1,58 @@
+:host ::ng-deep {
+  position: relative; // IMPORTANT : cette propriété permet de permet lees composants child de manière ABSOLUTE par rapport au composant parent
+}
+.tree-icon__container {
+  background: white;
+  border-radius: 50%;
+  border: 2px solid lightblue;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+
+  cursor: pointer;
+  
+  // &.axe {
+  //   background: red;
+  // }
+
+  .tree-icon {
+    &.one {
+      background: url(../../../../assets/tree-icon-1.png) no-repeat;
+      background-size: contain;
+      width: 90%;
+      height: 90%;
+    }
+    &.two {
+      background: url(../../../../assets/tree-icon-2.png) no-repeat;
+      background-size: contain;
+      width: 90%;
+      height: 90%;
+    }
+    &.three {
+      background: url(../../../../assets/tree-icon-3.png) no-repeat;
+      background-size: contain;
+      width: 90%;
+      height: 90%;
+    }
+    &.axe {
+      background: url(../../../../assets/hache.png) no-repeat;
+      background-size: contain;
+      width: 90%;
+      height: 90%;
+      margin-top: 10%; //pour recentrer l'image de la hache dans l'icone
+    }
+    &.gold {
+      background: url(../../../../assets/money.png) no-repeat;
+      background-size: contain;
+      width: 90%;
+      height: 90%;
+      margin-top: 10%; //pour recentrer l'image de la hache dans l'icone
+    }
+    //centrer dans le cercle
+    margin: 6%;//9px;
+    margin-top: 0%; //2px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
