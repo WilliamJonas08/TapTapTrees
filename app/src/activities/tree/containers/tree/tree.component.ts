@@ -344,7 +344,11 @@ export class TreeComponent implements OnInit {
 
   private async endGame() {
     // intervals: Array<any>
+
+    //Petite animation avec la couleur du plateau
+    this.mistakeMode = true;
     this.gameBloqued = true;
+
     this.store.set('result', this.result);
 
     //On stoppe les timers

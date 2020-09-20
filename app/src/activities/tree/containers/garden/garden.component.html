@@ -1,54 +1,54 @@
 <header-bar *ngIf="!showModal"></header-bar>
-<h1 *ngIf="!showModal">Boutique</h1>
+<h1 *ngIf="!showModal" translate>Shop</h1>
 
 <div class="garden-container" *ngIf="!showModal">
   <div class="classics">
-    <h2>Classics</h2>
-    <p class="section-description">Réels investissements pour la planête</p>
+    <h2 translate>Classics</h2>
+    <p class="section-description" translate>Real investments for the planet</p>
     <div class="shop-item" *ngFor="let shopItem of classicItems">
       <div class="img" [id]="shopItem.itemName"></div>
       <div class="text">
         <h3>
-          {{ shopItem.displayName }}
+          {{ shopItem.displayName |translate}}
           ({{
             (this.user$ | async).items[shopItem.itemName]
               ? (this.user$ | async).items[shopItem.itemName][shopItem.itemName]
               : 0
           }})
         </h3>
-        <p>{{ shopItem.description }}</p>
+        <p>{{ shopItem.description |translate}}</p>
         <button
           (click)="buyItem(shopItem.itemName)"
           [disabled]="(this.user$ | async).gold < shopItem.price"
         >
-          Buy for {{ shopItem.price }}
+          <span translate style="margin-right: 5px;">Buy for</span> {{ shopItem.price }}
           <div class="gold-icon"></div>
         </button>
       </div>
     </div>
   </div>
 
-  <h2>Boosters</h2>
-  <p class="section-description">
-    Gadgets pour améliorer ta performance de jeu
+  <h2 translate>Boosters</h2>
+  <p class="section-description" translate>
+    Gadgets to improve your gaming performance
   </p>
   <div class="shop-item" *ngFor="let shopItem of boosterItems">
     <div class="img" [id]="shopItem.itemName"></div>
     <div class="text">
       <h3>
-        {{ shopItem.displayName }}
+        {{ shopItem.displayName |translate}}
         ({{
           (this.user$ | async).items[shopItem.itemName]
             ? (this.user$ | async).items[shopItem.itemName][shopItem.itemName]
             : 0
         }})
       </h3>
-      <p>{{ shopItem.description }}</p>
+      <p>{{ shopItem.description |translate}}</p>
       <button
         (click)="buyItem(shopItem.itemName)"
         [disabled]="(this.user$ | async).gold < shopItem.price"
       >
-        Buy for {{ shopItem.price }}
+        <span translate style="margin-right: 5px;">Buy for </span>{{ shopItem.price }}
         <div class="gold-icon"></div>
       </button>
     </div>
@@ -57,15 +57,15 @@
   <!-- {{ (user$ | async).items | json }} -->
 </div>
 
-<h1 *ngIf="showModal">Publicité (test)</h1>
+<h1 *ngIf="showModal" translate>Publicity</h1>
 <div class="publicity_modal" *ngIf="showModal">
   <div class="text">
     <!-- [ngStyle]="{display:showModal?'block':'none'}" -->
-    <p>- Aucune publicité disponible -</p>
-    <p>
-      Seriez vous prêt à regarder une courte publicité pour planter des arbres ?
+    <p translate>- No advertising available -</p>
+    <p translate>
+      Would you be willing to watch a short advertisement in order to plant trees?
     </p>
-    <p>Répondez nous via l'option FEEDBACK dans l'onglet des options !</p>
+    <p translate>Answer us via the FEEDBACK option in the options tab!</p>
 
     <!-- <p style="margin-top: 1rem">Publicité test</p> -->
   </div>
@@ -99,9 +99,9 @@
   <!-- fin du module de parrainage iGraal-->
 
   <div class="answer">
-    <button id="accept" (click)="modalAnswer('true')">J'ai compris</button>
-    <button id="accept" (click)="modalAnswer('true')">
-      Je n'ai pas compris
+    <button id="accept" (click)="modalAnswer('true')" translate>I get it</button>
+    <button id="accept" (click)="modalAnswer('true')" translate>
+      I did not understand
     </button>
   </div>
 

@@ -20,10 +20,11 @@
             <div class="counter">{{booster.number}}</div>
             <div class="img" [id]="booster.itemName"></div>
         </button>
+        <p *ngIf="boostersArray.length===0" translate>- You don't have boosters yet -</p>
     </div>
 
     <!-- Retour vers le setup -->
-    <div class="exit-btn" (click)="leaveGame()"></div>
+    <button class="exit-btn" (click)="leaveGame()" [disabled]="displayCountdown"></button>
 
 
     <div class="countdown" [ngStyle]="{display:displayCountdown? 'flex' : 'none'}">
@@ -31,7 +32,7 @@
     </div>
 
     <div class="combo-info" [ngStyle]="{display:displayComboInfo? 'flex' : 'none'}">
-        <span>COMBO MODE</span>
+        <span translate>COMBO MODE</span>
     </div>
 
 </div>

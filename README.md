@@ -22,4 +22,12 @@ REMARQUES
 
 
 getBrowserLang()
-# TapTapTrees
+
+# Deployment
+
+- Login into Firebase : firebase login
+- Build de l'appli : ng build
+Permet de compiler les fichiers dans un dossier distant (dist)
+- Test du rendu en local avant déploiement: firebase serve --only hosting
+- Déploiement : firebase deploy -m "#commentaire"
+- Attendre ! Il faut environ 30 minutes avant de pouvoir remarquer la nouvelle version

@@ -1,4 +1,4 @@
-<div class="auth-form">
+<div class="auth-form" *ngIf="!resetingPassword">
   <div class="title">
     <ng-content select="h1"></ng-content>
   </div>
@@ -35,14 +35,60 @@
       <!-- <span class="disabled_img" *ngIf="form.invalid"></span> -->
       <button type="submit">
         <div class="disabled_img" *ngIf="form.invalid"></div>
-          <!-- On injecte le p plutot que le bouton entier afin de pouvoir controler l'aspect du bouton -->
-          <ng-content select="p" ></ng-content>
-        </button>
+        <!-- On injecte le p plutot que le bouton entier afin de pouvoir controler l'aspect du bouton -->
+        <ng-content select="p"></ng-content>
+      </button>
     </div>
+
+    <p style="color: white; font-weight: bold" *ngIf="type === 'register'">
+      Cet email vous sera utile afin de retrouver votre mot de passe si vous
+      veniez à l'oublier
+    </p>
 
     <div class="auth-form__toggle">
       <ng-content select="a"></ng-content>
+      <a (click)="resetingPassword = true" *ngIf="type === 'login'"
+        >Forgot password ?</a
+      >
     </div>
   </form>
 </div>
+
+<div class="auth-form" *ngIf="resetingPassword">
+  <div class="title">
+    <h1>Reset Password</h1>
+  </div>
+
+  <div class="formResetPassword" [formGroup]="form_resetPassword">
+    <label>
+
+      <p style="color: white; font-weight: bold;">
+        Veuillez renseigner l'email associé à votre compte afin de pouvoir réinitialiser votre mot de passe.
+      </p>
+
+      <input type="email" placeholder="Email adress" formControlName="email" />
+    </label>
+
+    <div class="error" *ngIf="emailFormatReset">Invalid Email format</div>
+
+    <button
+      class="reset_password_btn"
+      (click)="forgottenPassword(this.form_resetPassword.value.email)"
+      [disabled]="form_resetPassword.invalid"
+    >
+      <div class="disabled_img" *ngIf="form_resetPassword.invalid"></div>
+      Reset Password
+    </button>
+
+    <div class="resetInfo" *ngIf="resetEmailSent">
+      Un email de réinitialisation de mot de passe a été envoyé avec succès à
+      l'adresse {{ this.form_resetPassword.value.email }}. N'oubliez pas de vérifier parmis les mails indésirables.
+    </div>
+
+    <div class="auth-form__toggle">
+      <a (click)="resetingPassword = false">Back</a>
+    </div>
+  </div>
+</div>
+
 <!-- {{this.form.value|json}} -->

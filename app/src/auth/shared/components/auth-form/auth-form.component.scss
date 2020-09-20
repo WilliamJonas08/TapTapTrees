@@ -17,9 +17,6 @@
     font-weight: 600;
     text-align: center;
   }
-  p {
-    margin: 0;
-  }
 
   button {
     cursor: pointer;
@@ -50,12 +47,17 @@
       box-shadow: 0 4px 0px darken($color: lightblue, $amount: 30%);
       color: white;
     }
+
+    p {
+      margin: 0;
+    }
+
   }
   a {
-    //Position en bas du form
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 2rem;
+    // //Position en bas du form
+    // position: absolute;
+    // bottom: 0;
+    // margin-bottom: 2rem;
 
     // darken(#f8fafc,5%)
     display: block;
@@ -66,6 +68,7 @@
     cursor: pointer;
     width: 100%;
     padding: 10px;
+    margin-bottom: 1rem;
     color: darken($color: #e6edf4, $amount: 40%);
     font-size: 16px;
     font-weight: bold;
@@ -150,13 +153,14 @@
       }
     }
   }
-  // &__toggle {
-  //   border-radius: 0 0 3px 3px;
-  //   border-top: 1px solid #c1cedb;
-  //   background: darken(#f8fafc,5%); //#f8fafc;
-  //   padding: 10px;
-  //   margin: 0 -30px -30px;
-  // }
+  &__toggle {
+    //Position en bas du form
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2rem;
+  }
+
   label {
     display: block;
     margin-bottom: 1rem;
@@ -189,5 +193,50 @@
     //   border-radius: 0 0 3px 3px;
     //   margin: -1px 0 0;
     // }
+  }
+
+
+  //RESET PASSWORD
+  .formResetPassword {
+    position: relative;
+    margin: auto 8%;
+    padding-top: 8%;
+    height: 93%; // Pour parer les 7% du title
+
+    .reset_password_btn{
+
+      &:disabled {
+          //   border: 1px solid #2f2f5d;
+          //   background: lighten(#2f2f5d, 10%);
+          //   box-shadow: 0 4px 0px darken($color: #2f2f5d, $amount: 15%);
+          //   color: white;
+          background: darken($color: red, $amount: 15%);
+          border: 1px solid darken($color: red, $amount: 30%);
+          box-shadow: 0 4px 0px darken($color: red, $amount: 30%);
+          color: white;
+          cursor: not-allowed;
+          padding-right: 30px; // pour rentrer horizontalement le texte dans le bouton
+        
+  
+        .disabled_img {
+          background: url(../../../../assets/forbidden.png) no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 20px;
+          width: 20px;
+          margin-right: 0.4em;
+        }
+      }
+    }
+
+    .resetInfo{
+      color: white; 
+      font-weight: bold;
+      margin-top: 1rem;
+      border-radius: 8px;
+      padding: 3%;
+      border: 3px solid limegreen;
+    }
+
   }
 }

@@ -7,37 +7,38 @@
     {{ "informations" | translate }}
   </button>
   <div id="information" *ngIf="currentSection === 'information'">
-    <h2>Origine du jeu</h2>
-    <p class="text">
-      Le but initial de ce jeu était de pouvoir faire une bonne action tout en
-      jouant et en te mesurant à tes amis. Les clicks récoltés devaient servir à
-      planter des arbres avec Écosia. Malgré le fait qu'il aurait permit de
-      planter des arbres, il aurait eu malgré tout un impact carbone négatif dû
-      aux recherches du navigateur engendrées. Nous espérons malgré tout que ce
-      jeu sera plaisant et nous comptons sur vous pour nous faire parvenir vous
-      suggestions d'améliorations !
+    <h2 translate>Origin of the game</h2>
+    <p class="text" translate>
+      The original goal of this game was to be able to do a good deed while
+      playing and measuring yourself against your friends. The clicks collected
+      should have been used to plant trees with Écosia. Despite the fact that
+      this game would have allowed to plant trees, it would still have had a
+      negative carbon impact due to the generated browser searches. We still
+      hope that this game will be fun and we are counting on you to send us your
+      suggestions for improvements!
     </p>
 
-    <h2>État actuel du jeu</h2>
-    <p class="text">
-      Le jeu est actuellement en phase de TEST. Il s'agit de voir si il est
-      capable d'engager une communanuté suffisemment grande, permettant
-      d'attirer des publicitaire pour enfin pouvoir reverser des fonds à des
-      sociétés qui pourront planter des arbres (grâces aux publicités générées
-      via l'acquisition des objets 'classiques')
+    <h2 translate>Current state of the game</h2>
+    <p class="text" translate>
+      The game is currently in the TEST step. It is a question of seeing if it
+      is capable of engaging a sufficiently large community, allowing to attract
+      advertisers in order to be able to donate funds to companies that will be
+      able to plant trees (thanks to the advertisements generated via the
+      acquisition of 'classic' objects). In this case, the application would be
+      put on the PlayStore
     </p>
-    <p style="margin-top: 12px">Bon jeu et bonne chance !</p>
+    <p style="margin-top: 12px" translate>Have a good game and good luck!</p>
   </div>
 
   <button class="menu_button" (click)="display('color')" translate>
     color theme
   </button>
-  <div *ngIf="currentSection === 'color'">
+  <div *ngIf="currentSection === 'color'" translate>
     <!-- <button class="menu_button" (click)="display('')" translate>
           back to options
         </button> -->
 
-    Nothing to display yet
+    - Not available yet -
   </div>
 
   <button class="menu_button" (click)="display('language')">
@@ -55,7 +56,7 @@
       </button>
       <button (click)="swithLanguage('en')" translate>
         <span class="english_img"></span>
-        english (not finished)
+        english
       </button>
     </div>
   </div>

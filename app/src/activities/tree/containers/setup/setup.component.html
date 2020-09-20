@@ -29,13 +29,13 @@
           <div class="img" id="record"></div>
           Meilleur score : {{this.userRecords?this.userRecords["easy"]:0}}
         </li> -->
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="time"></div>
-          Écoulement lent du temps
+          Slow time
         </li>
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="axe"></div>
-          Attention aux haches
+          Watch out for axes
         </li>
       </ul>
 
@@ -44,17 +44,17 @@
           <div class="img" id="record"></div>
           Meilleur score : {{this.userRecords?this.userRecords["moderate"]:0}}
         </li> -->
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="time"></div>
-          Écoulement modéré du temps
+          Normal time
         </li>
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="axe"></div>
-          Attention aux haches
+          Watch out for axes
         </li>
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="tree"></div>
-          2 icônes simultanément
+          2 icons simultaneously
         </li>
       </ul>
 
@@ -63,17 +63,17 @@
           <div class="img" id="record"></div>
           Meilleur score : {{this.userRecords?this.userRecords["hard"]:0}}
         </li> -->
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="time"></div>
-          Écoulement rapide du temps
+          Fast time
         </li>
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="axe"></div>
-          Attention aux haches
+          Watch out for axes
         </li>
-        <li class="infoItem">
+        <li class="infoItem" translate>
           <div class="img" id="tree"></div>
-          3 icônes simultanément
+          3 icons simultaneously
         </li>
       </ul>
     </div>
@@ -83,8 +83,9 @@
       class="rules-btn"
       (click)="showRules = true"
       *ngIf="!gameHaveBeenPlayedBefore"
+      translate
     >
-      How to play
+      How to play ?
     </button>
 
     <div class="score_info" *ngIf="gameHaveBeenPlayedBefore">
@@ -95,33 +96,31 @@
       <p class="showBonus" *ngIf="showBonus && this.percentageBonusAdded > 0">
         (+{{ this.percentageBonusAdded }}%)
       </p>
-      <div class="scoreText" *ngIf="bestScore">new best score !</div>
+      <div class="scoreText" *ngIf="bestScore" translate>new best score !</div>
     </div>
   </div>
 
   <div *ngIf="showRules">
     <header-bar></header-bar>
-    <button type="button" class="rules-btn" (click)="showRules = false" style="margin: 2rem 0 1rem 0;">
+    <button type="button" class="rules-btn" (click)="showRules = false" style="margin: 2rem 0 1rem 0;" translate>
       Back
     </button>
 
-    <div class="rules">
-      <h2>Les règles</h2>
+    <div class="rules" >
+      <h2 translate>Rules</h2>
 
-      <p>- Cliquer sur les icones d'arbres pour gagner des points et du temps</p>
-      <p>- Ne pas cliquer sur les icônes rouges qui font perdre du temps</p>
-      <p>OBJECTIF : tenir le plus longtemps pour obtenir le meilleur score de la communauté !</p>
+      <p translate>- Click on the tree icons to gain points and time</p>
+      <p translate>- Do not click on the red icons which waste time</p>
+      <p translate>GOAL: resist as long as possible to get the best score from the community!</p>
 
-      <h2>Astuces</h2>
+      <h2 translate>Tips</h2>
 
-      <p>- Mode combo : activé après une série de plus de 10 clicks sans erreur
-          (à côté des icônes ou sur des icônes rouges)</p>
-      <p>- Le mode combo te permet de doubler les points obtenus pour chaque icône</p>
-      <p>- Cliquer autant de fois sur les icônes qu'il y a d'arbres</p>
-      <p>- Utiliser des boosters pour activer des capacités spéciales et
-          augmenter ton score !</p>
-      <p>- Possèdes autant d'objets de type "classique" que possible afin
-          d'augmenter ton score et l'or gagné en fin de partie</p>
+      <p translate>- Combo mode: activated after a series of more than 10 clicks without error
+(next to icons or on red icons)</p>
+      <p translate>- The combo mode allows you to double the points obtained for each icon</p>
+      <p translate>- Click as many times on the icons as there are trees</p>
+      <p translate>- Use boosters to activate special abilities and increase your score!</p>
+      <p translate>- Own as many 'classic' type items as possible to increase your score and the gold you earn at the end of the game</p>
 
     </div>
   </div>

@@ -3,12 +3,10 @@
 <div class="feedback-form">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="text">
-      <p>
-        Vous pouvez nous faire part de vos retours, vos impressions, des
-        éventuels bugs rencontrés, voire vos idées d'amélioration ici si vous le
-        souhaitez !
+      <p translate>
+        You can give us your feedback, your impressions, possible bugs encountered, or even your ideas for improvement here if you wish!
       </p>
-      <p>Cela nous aidera beaucoup !</p>
+      <p translate>It will help us a lot!</p>
     </div>
 
     <!-- <label class="email">
@@ -19,7 +17,7 @@
     <label class="feedback">
       <input
         type="text"
-        placeholder="Please enter your remark !"
+        placeholder="{{'Please enter your remark !'|translate}}"
         formControlName="feedback"
       />
     </label>
@@ -28,16 +26,16 @@
             Invalid Email format
         </div> -->
 
-    <div class="error" *ngIf="feedbackInvalid">
+    <div class="error" *ngIf="feedbackInvalid" translate>
       Feedback is required if you want to send us a usefull help remark !
     </div>
 
     <!-- <ng-content select=".error"></ng-content> -->
 
     <div class="feedback-form__action">
-      <button type="submit" [disabled]="form.invalid">
+      <button type="submit" [disabled]="form.invalid" translate>
         <span class="disabled_img" *ngIf="form.invalid"></span>
-        Send feedback
+        send feedback
       </button>
     </div>
   </form>

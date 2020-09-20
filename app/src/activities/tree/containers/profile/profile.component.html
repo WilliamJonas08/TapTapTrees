@@ -1,4 +1,4 @@
-<h1>profil</h1>
+<h1 translate>profile</h1>
 
 <div class="profile-container">
   <!-- <h1>Profile</h1> -->
@@ -10,7 +10,7 @@
   </div>
 
   <div class="section">
-    <h2>Statistiques</h2>
+    <h2 translate>Statistics</h2>
 
     <div class="stats-data">
       <!-- Nb arbres plantés total -->
@@ -18,7 +18,7 @@
         <div class="img" id="total-planted"></div>
         <div class="text">
           <h3>0</h3>
-          <p>Total planted</p>
+          <p translate>Total planted</p>
         </div>
       </div>
 
@@ -27,7 +27,7 @@
         <div class="img" id="clicked"></div>
         <div class="text">
           <h3>{{ (this.user$ | async).plantedTrees }}</h3>
-          <p>Trees clicked</p>
+          <p translate>Trees clicked</p>
         </div>
       </div>
 
@@ -36,7 +36,7 @@
         <div class="img" id="tree-bonus"></div>
         <div class="text">
           <h3>{{ this.percentageTreeBonus }}%</h3>
-          <p>Tree bonus</p>
+          <p translate>Tree bonus</p>
         </div>
       </div>
 
@@ -45,24 +45,24 @@
         <div class="img" id="gold-bonus"></div>
         <div class="text">
           <h3>{{ this.percentageGoldBonus }}%</h3>
-          <p>Gold bonus</p>
+          <p translate>Gold bonus</p>
         </div>
       </div>
 
     </div>
   </div>
   <div class="section">
-    <h2>Amis</h2>
-    <p>Not available yet</p>
+    <h2 translate>Friends</h2>
+    <p translate>- Not available yet -</p>
   </div>
   <div class="section">
-    <h2>Succès</h2>
-    <p>Not available yet</p>
+    <h2 translate>Success</h2>
+    <p translate>- Not available yet -</p>
   </div>
   <div class="section" *ngIf="(this.user$|async).uid==='HEYDjqDnELeWcmfoWnr7Bbqqvqo1'">
     <h2>TODO-LIST</h2>
-<p>Clean tous les components inutiles</p>
-<p>Commit et push la nouvelle app</p>
+<p>Migrer toutes les vérifications "comme dans le back" possible ?</p>
+<p>Les icones de hache devraient être ajouté à la liste des components plutot que de fair epartie du nombred'icones d'arbres : externaliser le choix du type d'icones ?</p>
     <!-- <p>Replay trop rapide</p> -->
     
     <h2>VERIFIER</h2>

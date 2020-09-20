@@ -92,6 +92,12 @@
     background: url(../../../../assets/exitGame.png) no-repeat;
     background-size: contain;
     background-position: center;
+    border:none;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
   }
 
   .countdown {

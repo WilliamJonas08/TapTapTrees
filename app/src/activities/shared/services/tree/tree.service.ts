@@ -80,7 +80,7 @@ export class TreeService {
       difficulty: 'hard',
       iconsNumber: 3,
       speed: 300,
-      scoreToReachForGold: 10,
+      scoreToReachForGold: 40,
     },
   ];
 
@@ -91,7 +91,7 @@ export class TreeService {
       price: 25,
       // price: 50,
       description:
-        'Augmente de 5% ton score pour chaque item possédé - Regardes une courte pub afin de planter de véritables arbres',
+        'Increase your score by 5% for each item you own - Watch a short ad to plant real trees',
       bonusValue: 5,
       type: 'classic',
     },
@@ -100,7 +100,7 @@ export class TreeService {
       price: 25,
       // price: 50,
       description:
-        "Augmente de 5% l'or collecté pour chaque item possédé - Regardes une courte pub afin de planter de véritables arbres",
+        "Increase gold collected for each item owned by 5% - Watch a short ad to plant real trees",
       bonusValue: 5,
       type: 'classic',
     },
@@ -109,7 +109,7 @@ export class TreeService {
       price: 10,
       // price: 20,
       description:
-        'Tu limites la déforestation et figes ainsi le temps pendant 3s.',
+        'You limit deforestation and thus freeze time for 3s.',
       bonusValue: 0,
       type: 'booster',
     },
@@ -118,7 +118,7 @@ export class TreeService {
       price: 15,
       // price: 20,
       description:
-        'Plus de la moitié de tes émissions de CO2 est due aux transports. En choisissans ce mode de transport plus durable, tu passes instantanément en mode combo',
+        'More than half of your CO2 emissions are due to transport. By choosing this more sustainable mode of transport, you instantly switch to combo mode',
       bonusValue: 0,
       type: 'booster',
     },

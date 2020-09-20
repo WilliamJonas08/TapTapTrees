@@ -9,6 +9,8 @@ import { SharedModule } from '../shared/shared.module';
 import { TreeComponent } from './containers/tree/tree.component';
 import { SetupComponent } from './containers/setup/setup.component';
 import { LeaderboardComponent } from './containers/leaderboard/leaderboard.component';
+import { GardenComponent } from './containers/garden/garden.component';
+import { ProfileComponent } from './containers/profile/profile.component';
 
 // components
 import { CounterComponent } from './components/counter/counter.component';
@@ -18,8 +20,6 @@ import { LeaderboardItemComponent } from './components/leaderboard-item/leaderbo
 import { FlameComponent } from './components/flame/flame.component';
 
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { GardenComponent } from './containers/garden/garden.component';
-import { ProfileComponent } from './containers/profile/profile.component';
 
 
 const ROUTES: Routes = [
