@@ -9,19 +9,20 @@
       <div class="img" [id]="shopItem.itemName"></div>
       <div class="text">
         <h3>
-          {{ shopItem.displayName |translate}}
+          {{ shopItem.displayName | translate }}
           ({{
             (this.user$ | async).items[shopItem.itemName]
               ? (this.user$ | async).items[shopItem.itemName][shopItem.itemName]
               : 0
           }})
         </h3>
-        <p>{{ shopItem.description |translate}}</p>
+        <p>{{ shopItem.description | translate }}</p>
         <button
           (click)="buyItem(shopItem.itemName)"
           [disabled]="(this.user$ | async).gold < shopItem.price"
         >
-          <span translate style="margin-right: 5px;">Buy for</span> {{ shopItem.price }}
+          <span translate style="margin-right: 5px">Buy for</span>
+          {{ shopItem.price }}
           <div class="gold-icon"></div>
         </button>
       </div>
@@ -36,19 +37,20 @@
     <div class="img" [id]="shopItem.itemName"></div>
     <div class="text">
       <h3>
-        {{ shopItem.displayName |translate}}
+        {{ shopItem.displayName | translate }}
         ({{
           (this.user$ | async).items[shopItem.itemName]
             ? (this.user$ | async).items[shopItem.itemName][shopItem.itemName]
             : 0
         }})
       </h3>
-      <p>{{ shopItem.description |translate}}</p>
+      <p>{{ shopItem.description | translate }}</p>
       <button
         (click)="buyItem(shopItem.itemName)"
         [disabled]="(this.user$ | async).gold < shopItem.price"
       >
-        <span translate style="margin-right: 5px;">Buy for </span>{{ shopItem.price }}
+        <span translate style="margin-right: 5px">Buy for </span
+        >{{ shopItem.price }}
         <div class="gold-icon"></div>
       </button>
     </div>
@@ -63,7 +65,8 @@
     <!-- [ngStyle]="{display:showModal?'block':'none'}" -->
     <p translate>- No advertising available -</p>
     <p translate>
-      Would you be willing to watch a short advertisement in order to plant trees?
+      Would you be willing to watch a short advertisement in order to plant
+      trees?
     </p>
     <p translate>Answer us via the FEEDBACK option in the options tab!</p>
 
@@ -99,8 +102,20 @@
   <!-- fin du module de parrainage iGraal-->
 
   <div class="answer">
-    <button id="accept" (click)="modalAnswer('true')" translate>I get it</button>
-    <button id="accept" (click)="modalAnswer('true')" translate>
+    <button
+      id="accept"
+      (click)="modalAnswer('true')"
+      [disabled]="waitPublicity"
+      translate
+    >
+      I get it
+    </button>
+    <button
+      id="accept"
+      (click)="modalAnswer('true')"
+      [disabled]="waitPublicity"
+      translate
+    >
       I did not understand
     </button>
   </div>

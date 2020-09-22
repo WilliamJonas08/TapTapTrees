@@ -173,6 +173,12 @@ h1 {
         box-shadow: 0 4px 0px darken($color: lightblue, $amount: 30%);
         color: white;
       }
+      &:disabled {
+        background: darken($color: red, $amount: 15%);
+        border: 1px solid darken($color: red, $amount: 30%);
+        box-shadow: 0 4px 0px darken($color: red, $amount: 30%);
+        color: white;
+      }
     }
   }
 }

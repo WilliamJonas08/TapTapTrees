@@ -88,7 +88,7 @@ export class TreeService {
   private SHOP_ITEMS: Array<shopItem> = [
     {
       itemName: 'Plant-a-tree',
-      price: 25,
+      price: 100,
       // price: 50,
       description:
         'Increase your score by 5% for each item you own - Watch a short ad to plant real trees',
@@ -97,7 +97,7 @@ export class TreeService {
     },
     {
       itemName: 'Plant-a-coin',
-      price: 25,
+      price: 100,
       // price: 50,
       description:
         "Increase gold collected for each item owned by 5% - Watch a short ad to plant real trees",

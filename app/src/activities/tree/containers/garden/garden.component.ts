@@ -28,6 +28,7 @@ export class GardenComponent implements OnInit {
   boosterItems: Array<shopItemExtended>;
 
   showModal: boolean = false; //Affichage de la modal
+  waitPublicity:boolean =false //Bloquage des boutons pendant la pub
 
   constructor(private store: Store, private treeService: TreeService) {}
 
@@ -59,10 +60,14 @@ export class GardenComponent implements OnInit {
       //On n'affiche la pub que dans le cas d'un achat d'item classique
       if (item.type === 'classic') {
         this.showModal = true;
+        this.waitPublicity=true
         // if(window.innerWidth > 567){
           // this.startIgraalScript_computer();
           // }
           this.startIgraalScript_Phone();
+          setTimeout(()=>{
+            this.waitPublicity=false
+          },5000)
       }
     }
   }
